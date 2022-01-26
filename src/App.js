@@ -1,13 +1,15 @@
 import "./App.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Landing from "./Landing";
 import Nav from "./Nav";
-import About from "./About";
+import Shop from "./Shop";
 import Gallerypopup from "./Gallerypopup";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [gallery, setGallery] = useState([]);
+  const [webshop, setWebshop] = useState([]);
   const [currentImg, setCurrentImg] = useState({});
   const [isFetched, setIsFetched] = useState(false);
 
@@ -28,6 +30,21 @@ function App() {
     }
     getGallery();
   }, []);
+  useEffect(() => {
+    async function getShop() {
+      const JSONData = await fetch("https://tradingtime-9cf2.restdb.io/rest/tradingtimeshop", {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "x-apikey": "61e6e8efa0f7d226f9b75f6b",
+          "cache-control": "no-cache",
+        },
+      });
+      const shopData = await JSONData.json();
+      setWebshop(shopData);
+    }
+    getShop();
+  }, []);
 
   return (
     <div className="App">
@@ -35,7 +52,7 @@ function App() {
       <div className="banner">
         <Routes>
           <Route path="/" element={<Landing isFetched={isFetched} setCurrentImg={setCurrentImg} gallery={gallery} />} />
-          <Route path="about" element={<About />} />
+          <Route path="shop" element={<Shop isFetched={isFetched} webshop={webshop}/>} />
           <Route path="gallerypopup" element={<Gallerypopup currentImg={currentImg} />} />
         </Routes>
       </div>

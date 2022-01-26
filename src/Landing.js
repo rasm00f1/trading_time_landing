@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Rings } from  'react-loader-spinner'
+
 
 export default function Landing(props) {
   function randomRotateDeg() {
@@ -49,7 +51,9 @@ export default function Landing(props) {
           <div className="intro_txt">
             <h2>What is tranding time?</h2>
             <p>
-              Stranded in an island paradise inhabited by a group of friendly frog people. Enjoy a sandbox-island-life and go exploring in you own tempo. Solve your new friends quirky problems and trade yourself towards rebuilding you shipwrecked
+              Stranded in an island paradise inhabited by a group of friendly frog people.
+              Enjoy a sandbox-island-life and go exploring in you own tempo.
+              Solve your new friends quirky problems and trade yourself towards rebuilding you shipwrecked
               vessel!
             </p>
           </div>
@@ -65,8 +69,8 @@ export default function Landing(props) {
             {props.isFetched === true ? (
               <>
                 {galleryCopy.map((galleryItem) => (
-                  <Link to="gallerypopup">
-                    <div onClick={() => props.setCurrentImg(galleryItem)} key={galleryItem.galleryimg} style={{ transform: `rotate(${randomRotateDeg()}deg)` }} className="gallery_item_container">
+                  <Link className="fade_in"  key={galleryItem.galleryimg} to="gallerypopup">
+                    <div onClick={() => props.setCurrentImg(galleryItem)} style={{ transform: `rotate(${randomRotateDeg()}deg)` }} className="gallery_item_container">
                       <img className="gallery_item" src={`./img/${galleryItem.galleryimg}.jpg`} alt={galleryItem.alt} />
                       <p className="gallery_font">{galleryItem.description}</p>
                     </div>
@@ -74,7 +78,7 @@ export default function Landing(props) {
                 ))}
               </>
             ) : (
-              <h2>nothing</h2>
+              <Rings color="#fed218" height={280} width={280} />
             )}
           </div>
         </section>

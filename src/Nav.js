@@ -11,8 +11,8 @@ export default function Nav(props) {
         <Link to="/">
           <p>Home</p>
         </Link>
-        <Link to="about">
-          <p>About</p>
+        <Link to="shop">
+          <p>Shop</p>
         </Link>
 
         <a href="https://www.instagram.com/halfpastyellow_/" rel="noreferrer noopener" target="_blank">
