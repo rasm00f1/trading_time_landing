@@ -15,9 +15,9 @@ export default function Shop(props) {
                     </div>
                     <img className="gallery_item" src={`./img/${webshopItem.itemimg}.png`} alt={webshopItem.itemname} />
                     <div style={{backgroundColor: "#fed218", padding: "1rem"}} className="side_by_side">
-                      <button>Add to Cart</button>
-                      <button>+</button>
-                      <button>-</button>
+                      <button className="webshop_button">Add to Cart</button>
+                      <button className="webshop_button">+</button>
+                      <button className="webshop_button">-</button>
                     </div>
                   </div>
                 ))

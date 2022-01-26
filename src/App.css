@@ -269,7 +269,16 @@ p {
 .webshop_item img {
   padding: 0.5rem;
 }
-
+.webshop_button {
+  border: none;
+  border-radius: 10%;
+  color: white;
+  min-width: 30%;
+  font-family: "Londrina Solid", cursive;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  background-color: rgb(150 20 150);
+}
 /** ANIMATIONs **/
 .fade_in {
   animation-name: fade_in_kf;
