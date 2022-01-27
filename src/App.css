@@ -162,10 +162,15 @@ p {
   text-align: left;
 }
 .introvid_container {
+  max-width: 45%;
+
   padding: 1rem;
   border-radius: 0.25rem;
   background-color: #fed218;
   box-shadow: 4px 4px 0px rgb(150 20 150);
+}
+.introvid_container video {
+  max-width: 100%;
 }
 .gradient_background {
   background: rgb(0, 0, 0);
@@ -270,7 +275,17 @@ p {
   .intro_txt {
     width: 90% !important;
   }
+
+  .introvid_container {
+    max-width: 90%;
+  }
+
   .burger_icon {
+    font-family: "Londrina Solid", cursive;
+
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
     display: flex;
     cursor: pointer;
   }
@@ -284,8 +299,7 @@ p {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 92vh;
-    margin-top: 8vh;
+    height: 100vh;
 
     transition: opacity 0.25s;
   }
@@ -395,6 +409,13 @@ p {
   animation-fill-mode: forwards;
 }
 
+.opacity_backwards {
+  animation-name: opacity_backwards_kf;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
 @keyframes fade_in_kf {
   0% {
     opacity: 0;
@@ -417,9 +438,23 @@ p {
 
 @keyframes opacity_kf {
   0% {
+    transform: translateY(25%);
     opacity: 0;
   }
   100% {
+    transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes opacity_backwards_kf {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(25%);
+    opacity: 0;
+    pointer-events: none;
   }
 }

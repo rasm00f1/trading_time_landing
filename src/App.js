@@ -1,9 +1,9 @@
 import "./App.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Landing from "./Landing";
+import Landing from "./Landing/Landing";
 import Nav from "./Nav";
 import Shop from "./Shop";
-import Gallerypopup from "./Gallerypopup";
+import Gallerypopup from "./Landing/Gallerypopup";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -52,7 +52,7 @@ function App() {
       <div className="banner">
         <Routes>
           <Route path="/" element={<Landing isFetched={isFetched} setCurrentImg={setCurrentImg} gallery={gallery} />} />
-          <Route path="shop" element={<Shop isFetched={isFetched} webshop={webshop}/>} />
+          <Route path="shop" element={<Shop isFetched={isFetched} webshop={webshop} />} />
           <Route path="gallerypopup" element={<Gallerypopup currentImg={currentImg} />} />
         </Routes>
       </div>
