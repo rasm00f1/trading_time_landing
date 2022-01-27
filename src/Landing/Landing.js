@@ -1,17 +1,8 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Rings, TailSpin } from "react-loader-spinner";
+import Gallery from "./Gallery";
+import Review from "./Review";
+import GameIntro from "./GameIntro";
 
 export default function Landing(props) {
-  function randomRotateDeg() {
-    const decider = Math.floor(Math.random() * 2);
-
-    if (decider === 0) {
-      return Math.random() * 2;
-    } else {
-      return Math.random() * -2;
-    }
-  }
   console.log(props.isFetched);
   const galleryCopy = [...props.gallery];
   return (
@@ -46,39 +37,9 @@ export default function Landing(props) {
         </div>
       </section>
       <div className="gradient_background">
-        <section className="intro">
-          <div className="intro_txt">
-            <h2>What is Trading Time?</h2>
-            <p>
-              Stranded on an island paradise inhabited by a group of friendly frog people. Enjoy a sandbox-island-life and go exploring in you own tempo. Solve your new friends quirky problems and trade yourself towards rebuilding you shipwrecked
-              vessel!
-            </p>
-          </div>
-          <div className="introvid_container">
-            <video width="460" height="260" controls>
-              <source src="./img/intro_mov.mp4" />
-            </video>
-          </div>
-        </section>
-        <section className="gallery">
-          <h2>Gallery</h2>
-          <div className="gallery_container">
-            {props.isFetched === true ? (
-              <>
-                {galleryCopy.map((galleryItem) => (
-                  <Link className="fade_in" key={galleryItem.galleryimg} to="gallerypopup">
-                    <div onClick={() => props.setCurrentImg(galleryItem)} style={{ transform: `rotate(${randomRotateDeg()}deg)` }} className="gallery_item_container">
-                      <img className="gallery_item" src={`./img/${galleryItem.galleryimg}.jpg`} alt={galleryItem.alt} />
-                      <p className="gallery_font">{galleryItem.description}</p>
-                    </div>
-                  </Link>
-                ))}
-              </>
-            ) : (
-              <TailSpin ariaLabel="Loading" color="#fed218" height={80} width={80} />
-            )}
-          </div>
-        </section>
+        <GameIntro />
+        <Gallery setCurrentImg={props.setCurrentImg} isFetched={props.isFetched} galleryCopy={galleryCopy} />
+        <Review />
       </div>
     </>
   );
