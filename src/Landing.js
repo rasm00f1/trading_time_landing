@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Rings } from  'react-loader-spinner'
-
+import { Rings, TailSpin } from "react-loader-spinner";
 
 export default function Landing(props) {
   function randomRotateDeg() {
@@ -49,11 +48,9 @@ export default function Landing(props) {
       <div className="gradient_background">
         <section className="intro">
           <div className="intro_txt">
-            <h2>What is tranding time?</h2>
+            <h2>What is Trading Time?</h2>
             <p>
-              Stranded in an island paradise inhabited by a group of friendly frog people.
-              Enjoy a sandbox-island-life and go exploring in you own tempo.
-              Solve your new friends quirky problems and trade yourself towards rebuilding you shipwrecked
+              Stranded on an island paradise inhabited by a group of friendly frog people. Enjoy a sandbox-island-life and go exploring in you own tempo. Solve your new friends quirky problems and trade yourself towards rebuilding you shipwrecked
               vessel!
             </p>
           </div>
@@ -69,7 +66,7 @@ export default function Landing(props) {
             {props.isFetched === true ? (
               <>
                 {galleryCopy.map((galleryItem) => (
-                  <Link className="fade_in"  key={galleryItem.galleryimg} to="gallerypopup">
+                  <Link className="fade_in" key={galleryItem.galleryimg} to="gallerypopup">
                     <div onClick={() => props.setCurrentImg(galleryItem)} style={{ transform: `rotate(${randomRotateDeg()}deg)` }} className="gallery_item_container">
                       <img className="gallery_item" src={`./img/${galleryItem.galleryimg}.jpg`} alt={galleryItem.alt} />
                       <p className="gallery_font">{galleryItem.description}</p>
@@ -78,7 +75,7 @@ export default function Landing(props) {
                 ))}
               </>
             ) : (
-              <Rings color="#fed218" height={280} width={280} />
+              <TailSpin ariaLabel="Loading" color="#fed218" height={80} width={80} />
             )}
           </div>
         </section>
