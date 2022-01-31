@@ -91,7 +91,7 @@ p {
 
 /** LANDING BANNER **/
 .banner {
-  background-image: url("http://localhost:3000/img/banner_02.png");
+  background-image: url("./img/banner_02.png");
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 8vh;
@@ -388,6 +388,19 @@ p {
   transform: translateX(0.05rem);
   box-shadow: 1.75px 1.75px 0 #b48911;
 }
+
+/** REVIEW SECTION **/
+.review {
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  min-height: 50vh;
+}
+.review p {
+  color: white;
+  font-size: 2rem;
+}
+
 /** ANIMATIONs **/
 .fade_in {
   animation-name: fade_in_kf;
