@@ -18,6 +18,7 @@ export default function ShopCounter(props) {
         className="webshop_button"
         onClick={() => {
           setAmount(0);
+          props.setCartAmount(amount);
         }}
       >
         Add to Cart
