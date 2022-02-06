@@ -19,6 +19,9 @@ export default function ShopCounter(props) {
         onClick={() => {
           setAmount(0);
           props.setCartAmount(amount);
+          if (amount === 0) {
+            props.setCartAmount("");
+          }
         }}
       >
         Add to Cart
