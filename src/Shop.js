@@ -16,7 +16,7 @@ export default function Shop(props) {
                 <p style={{ fontSize: "2rem" }}>{webshopItem.itemname}</p>
               </div>
               <img src={`./img/${webshopItem.itemimg}.png`} alt={webshopItem.itemname} />
-              <ShopCounter />
+              <ShopCounter setCartAmount={props.setCartAmount} />
             </div>
           ))
         ) : (

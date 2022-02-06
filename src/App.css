@@ -430,6 +430,13 @@ p {
   animation-fill-mode: forwards;
 }
 
+.appear {
+  animation-name: appear_kf;
+  animation-duration: 0.25s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
 @keyframes fade_in_kf {
   0% {
     opacity: 0;
@@ -470,5 +477,13 @@ p {
     transform: translateY(25%);
     opacity: 0;
     pointer-events: none;
+  }
+}
+@keyframes appear_kf {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }

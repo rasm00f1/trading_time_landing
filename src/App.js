@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
+  const [cartAmount, setCartAmount] = useState("");
   const [gallery, setGallery] = useState([]);
   const [webshop, setWebshop] = useState([]);
   const [currentImg, setCurrentImg] = useState({});
@@ -48,11 +49,11 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
+      <Nav cartAmount={cartAmount} />
       <div className="banner">
         <Routes>
           <Route path="/" element={<Landing isFetched={isFetched} setCurrentImg={setCurrentImg} gallery={gallery} />} />
-          <Route path="shop" element={<Shop isFetched={isFetched} webshop={webshop} />} />
+          <Route path="shop" element={<Shop isFetched={isFetched} webshop={webshop} setCartAmount={setCartAmount} />} />
           <Route path="gallerypopup" element={<Gallerypopup currentImg={currentImg} />} />
         </Routes>
       </div>
