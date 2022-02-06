@@ -180,7 +180,8 @@ p {
 .gallery_font {
   font-family: "Permanent Marker", cursive;
   font-weight: 300;
-  font-size: 2rem;
+  font-size: 1.8rem;
+  color: black;
 }
 
 .gallery {
