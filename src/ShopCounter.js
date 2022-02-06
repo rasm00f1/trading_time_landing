@@ -2,9 +2,11 @@ import { useState } from "react";
 
 export default function ShopCounter(props) {
   const [amount, setAmount] = useState(0);
+  //Increases amount
   function incClick() {
     setAmount((prevAmount) => prevAmount + 1);
   }
+  //Decreases amount
   function decClick() {
     if (amount > 0) {
       setAmount((prevAmount) => prevAmount - 1);
