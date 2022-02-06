@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Nav(props) {
-  console.log("Font Awesome Free 5.2.0 by @fontawesome - https://fontawesome.comLicense - https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)");
+  useEffect(() => {
+    console.log("Font Awesome Free 5.2.0 by @fontawesome - https://fontawesome.comLicense - https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)");
+  }, []);
+
   const [open, setOpen] = useState(false);
 
   return (
