@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function Nav(props) {
+  console.log("Font Awesome Free 5.2.0 by @fontawesome - https://fontawesome.comLicense - https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)");
   const [open, setOpen] = useState(false);
 
   return (
@@ -17,7 +18,7 @@ export default function Nav(props) {
           Shop
         </Link>
         <Link to="/">
-          {props.cartAmount != "" ? (
+          {props.cartAmount !== "" ? (
             <p className="appear" style={{ position: "absolute", top: "-0.5rem", left: "1rem", zIndex: "1", width: "1.5rem", height: "1.5rem", borderRadius: "50%", backgroundColor: "rgb(150, 20, 150)", textAlign: "center" }}>
               {props.cartAmount}
             </p>
