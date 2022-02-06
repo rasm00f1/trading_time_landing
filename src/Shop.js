@@ -1,4 +1,6 @@
 import { TailSpin } from "react-loader-spinner";
+import ShopCounter from "./ShopCounter";
+
 export default function Shop(props) {
   const webshopCopy = [...props.webshop];
   console.log(webshopCopy);
@@ -14,11 +16,7 @@ export default function Shop(props) {
                 <p style={{ fontSize: "2rem" }}>{webshopItem.itemname}</p>
               </div>
               <img src={`./img/${webshopItem.itemimg}.png`} alt={webshopItem.itemname} />
-              <div style={{ backgroundColor: "#fed218", padding: "1rem" }} className="side_by_side">
-                <button className="webshop_button">Add to Cart</button>
-                <button className="webshop_button">+</button>
-                <button className="webshop_button">-</button>
-              </div>
+              <ShopCounter />
             </div>
           ))
         ) : (
